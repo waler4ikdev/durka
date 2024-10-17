@@ -1,0 +1,98 @@
+body{
+	background-color: pink;
+	background-image: url(banana.png);
+	z-index: 0;
+	font-family: sans-serif;
+}
+
+.main{
+	width: 95%;
+	background-color: white;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	z-index: 1;
+}
+
+.header{
+	background-color: #20B2AA;
+	width: 100%;
+	height: 100px;
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.header ul{
+	float: right;
+	list-style-type: none;
+	margin-top: 25px;
+	}
+
+.header li{
+	float: left;
+	padding: 15px 15px 15px 15px;
+	background-color: #5D4EF8;
+	color: #FFF;
+	margin: 0 15px 0 0;
+	border-radius: 10px;
+	}
+
+.header li:hover{
+	border-radius: 20px;
+	}
+
+.header img{
+	margin-top: 5px;
+	}
+
+.footer{
+	background-color: #20B2AA;
+	width: 100%;
+	height: 100px;
+	z-index: 2;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.vitolik{
+	position: relative;
+	background-color: green;
+	top: 418px;
+	width: 20%;
+	height: 350px;
+	float: right;
+	z-index: 6;
+
+	animation-name: vitolik_banner;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	opacity: 0;
+	animation-delay: 10s;
+	animation-fill-mode: forwards;
+	
+}
+
+.vitolik_img_banner{
+	padding-left: 20%;
+	height: 250px;
+}
+
+.button_vitolik_banner{
+	width: 20px;
+	padding-left: 40%;
+}
+
+@keyframes vitolik_banner{
+	0%{
+		top: 900px;
+
+	}
+	
+	100%{
+		opacity: 1;
+		
+	}
+} 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор среднего балла</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор среднего балла</h1>
+        <p>Введите оценки через запятую:</p>
+        <input type="text" id="gradesInput" placeholder="Например: 5,4,3,5">
+        <button onclick="calculateAverage()">Рассчитать средний балл</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            const input = document.getElementById('gradesInput').value;
+            const grades = input.split(',').map(grade => parseFloat(grade.trim()));
+
+            if (grades.some(isNaN)) {
+                document.getElementById('result').textContent = "Пожалуйста, введите только числа, разделенные запятыми.";
+                return;
+            }
+
+            const sum = grades.reduce((acc, grade) => acc + grade, 0);
+            const average = sum / grades.length;
+
+            document.getElementById('result').textContent = 
+                `Средний балл: ${average.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,24 +1,8 @@
-function timer() {
-    var nowDate = new Date();
-    var achiveDate = new Date(2025,02,23,18,0,0); //Задаем дату, к которой будет осуществляться обратный отсчет
-    var result = (achiveDate - nowDate)+1000;
-    if (result < 0) {
-        var elmnt = document.getElementById('timer');
-        elmnt.innerHTML = ' - : - - : - - : - - ';
-        return undefined;
-    }
-    var seconds = Math.floor((result/1000)%60);
-    var minutes = Math.floor((result/1000/60)%60);
-    var hours = Math.floor((result/1000/60/60)%24);
-    var days = Math.floor(result/1000/60/60/24);
-    if (seconds < 10) seconds = '0' + seconds;
-    if (minutes < 10) minutes = '0' + minutes;
-    if (hours < 10) hours = '0' + hours;
-    var elmnt = document.getElementById('timer');
-    elmnt.innerHTML = days + ':' + hours + ':' + minutes + ':' + seconds;
-    setTimeout(timer, 1000);
-}
-window.onload = function() {
-    timer();
-}
-//В html разметке задаем блок с id="timer", в него будет выводится обратный отсчет.
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <iframe src="https://free.timeanddate.com/countdown/i9s0uvrr/n352/cf111/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pc66c/tc66c/fs100/szw320/szh135/tatTime%20left%20to%20Event%20in/tac000/tptTime%20since%20Event%20started%20in/tpc000/mac000/mpc000/iso2025-02-23T06:00:00" allowtransparency="true" frameborder="0" width="320" height="135"></iframe>
+    </body>
+</html>
